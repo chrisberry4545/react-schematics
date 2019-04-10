@@ -1,28 +1,33 @@
 {
-  "name": "my-component",
-  "version": "0.0.0",
-  "description": "A blank schematics",
+  "name": "@chrisb-dev/react-schematics",
+  "version": "1.0.0",
+  "description": "A schematic for generating react components",
   "scripts": {
-    "build": "tsc -p tsconfig.json",
-    "start": "tsc -p tsconfig.json -w",
-    "test": "npm run build && jasmine src/**/*_spec.js"
+    "prepublishOnly": "npm run build",
+    "build": "npm run build:copy && npm run build:tsc",
+    "build:tsc": "tsc -p tsconfig.json",
+    "start": "concurrently \"npm run build:tsc -- -w\" \"npm run build:copy -- --watch\"",
+    "build:copy": "cpx \"src/**/!(index.ts)\" dist"
   },
   "keywords": [
     "schematics"
   ],
   "author": "",
   "license": "MIT",
-  "schematics": "./src/collection.json",
+  "schematics": "./dist/collection.json",
   "dependencies": {
     "@angular-devkit/core": "^7.3.8",
     "@angular-devkit/schematics": "^7.3.8",
     "@angular/cli": "^7.3.8",
-    "@types/jasmine": "^3.0.0",
     "@types/node": "^8.0.31",
-    "jasmine": "^3.0.0",
     "typescript": "~3.2.2"
   },
   "devDependencies": {
-    "@angular/core": "^7.2.12"
-  }
+    "@angular/core": "^7.2.12",
+    "concurrently": "^4.1.0",
+    "cpx": "^1.5.0"
+  },
+  "files": [
+    "/dist"
+  ]
 }

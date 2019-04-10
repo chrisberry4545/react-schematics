@@ -1,28 +1,39 @@
-# Getting Started With Schematics
+# React schematics
 
-This repository is a basic Schematic implementation that serves as a starting point to create and publish Schematics to NPM.
+## React components
 
-### Testing
+Angular schematics used to generate a set of Typescript React components.
 
-To test locally, install `@angular-devkit/schematics-cli` globally and use the `schematics` command line tool. That tool acts the same as the `generate` command of the Angular CLI, but also has a debug mode.
+Running this will:
 
-Check the documentation with
-```bash
-schematics --help
-```
+- Generate a .ts file with a set of interfaces for the input and dispatch props
+- Generate a .tsx file with a React component which expects the combination of the input and dispatch props
+- Generate a .ts connector file connecting the component to the store if the 
+connected option is not set to false
+- Generate a .scss file if the scss option is not set to false
+- Update the parents barrel file if it exists exporting either the connected 
+component or the base React component depending on whether the connected option
+is set or not
 
-### Unit Testing
 
-`npm run test` will run the unit tests, using Jasmine as a runner and test framework.
+## Setup
 
-### Publishing
+Running schematics requires angular cli to be installed
+`npm i -g @angular/cli`
 
-To publish, simply do:
+Install the package via npm:
+`npm i @chrisb-dev/react-schematics --save-dev`
 
-```bash
-npm run build
-npm publish
-```
+## Running
 
-That's it!
- 
+To run with default options
+`schematics @chrisb-dev/react-schematics:react-components`
+
+If you run without any options you will prompted to add any required options.
+Alternatively these can be specified in the command.
+
+`schematics @chrisb-dev/react-schematics:react-components --name=MyComponent`
+
+### Options
+
+Check out the schema file to view the possible options.

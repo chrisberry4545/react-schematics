@@ -1,9 +1,10 @@
 {
   "$schema": "../node_modules/@angular-devkit/schematics/collection-schema.json",
   "schematics": {
-    "my-component": {
+    "react-components": {
       "description": "A blank schematic.",
-      "factory": "./../dist/my-component/index#myComponent"
+      "factory": "./react-components/index#reactComponents",
+      "schema": "./react-components/schema.json"
     }
   }
 }
