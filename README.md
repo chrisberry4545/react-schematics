@@ -1,8 +1,12 @@
 # React schematics
 
-## React components
+## Description
 
-Angular schematics used to generate a set of Typescript React components.
+Angular schematics used to generate a set of Typescript React components, with
+options to connect them to the store or include scss. Works for React Native
+or React Web.
+
+## React components
 
 Running this will:
 
@@ -14,6 +18,8 @@ connected option is not set to false
 - Update the parents barrel file if it exists exporting either the connected 
 component or the base React component depending on whether the connected option
 is set or not
+
+These files can be seen [here](https://github.com/chrisberry4545/react-schematics/tree/master/src/react-components/files).
 
 
 ## Setup
