@@ -36,4 +36,5 @@ Alternatively these can be specified in the command.
 
 ### Options
 
-Check out the schema file to view the possible options.
+Check out the schema file to view the
+[possible options](https://github.com/chrisberry4545/react-schematics/blob/master/src/react-components/schema.json).
