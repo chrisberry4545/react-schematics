@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { SFC } from 'react';
 <%= scssImport %>
 import {
   <%= propInterfaceName %>
 } from './<%= classifiedName %>.interface';
 
-export const <%= classifiedName %> = ({}: <%= propInterfaceName %>) => (
+export const <%= classifiedName %>: SFC<<%= propInterfaceName %>> = ({
+}) => (
   <div><%= classifiedName %></div>
 );
