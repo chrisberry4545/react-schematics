@@ -1,6 +1,6 @@
 {
   "name": "@chrisb-dev/react-schematics",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A schematic for generating react components",
   "scripts": {
     "prepublishOnly": "npm run build",
